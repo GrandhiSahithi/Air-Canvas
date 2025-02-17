@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Canvas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="header">
+            <i class="fas fa-paint-brush icon"></i>
+            <span class="letter">A</span><span class="letter">i</span><span class="letter">r</span>
+            <span>&nbsp;</span>
+            <span class="letter">C</span><span class="letter">a</span><span class="letter">n</span><span class="letter">v</span><span class="letter">a</span><span class="letter">s</span>
+        </h1>
+        <div class="video-container">
+            <img src="{{ url_for('video_feed') }}" id="video-feed" alt="Video Feed">
+            <div class="color-container">
+                <input type="color" id="color-picker" value="#00FF00">
+                <div id="selected-color"></div>
+            </div>
+            <div class="size-buttons">
+                <button class="size-btn" data-size="5">Small</button>
+                <button class="size-btn" data-size="10">Medium</button>
+                <button class="size-btn" data-size="20">Large</button>
+            </div>
+            <button id="eraser-btn">Eraser</button>
+            <button id="clear-btn">Clear</button>
+        </div>
+        <div class="opacity-container">
+            <label for="opacity-slider">Opacity</label>
+            <input type="range" id="opacity-slider" min="0.1" max="1" step="0.1" value="0.5">
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='JS/script.js') }}"></script>
+</body>
+</html>
